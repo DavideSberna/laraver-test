@@ -10,7 +10,11 @@ class HomeController extends Controller
     public function index()
     {
         $allCategories = DB::table('categories')->get();
+        $allPosts = DB::table('posts')->get();
 
-        return view('index', ['categories' => $allCategories]);
+        return view('index', [
+            'categories' => $allCategories,
+            'posts' => $allPosts
+        ]);
     }
 }
